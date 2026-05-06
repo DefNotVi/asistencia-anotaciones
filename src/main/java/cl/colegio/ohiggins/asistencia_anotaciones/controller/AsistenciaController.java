@@ -14,12 +14,12 @@ public class AsistenciaController {
     private AsistenciaAnotacionesService service;
 
     @GetMapping
-    public List<Asistencia> listar() {
+    public List<Asistencia> getAll() {
         return service.listarAsistencias();
     }
 
     @PostMapping
-    public Asistencia guardar(@RequestBody Asistencia asistencia) {
+    public Asistencia create(@RequestBody Asistencia asistencia) {
         return service.guardarAsistencia(asistencia);
     }
 }

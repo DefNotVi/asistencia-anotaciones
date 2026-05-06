@@ -6,7 +6,6 @@ import cl.colegio.ohiggins.asistencia_anotaciones.repository.AnotacionRepository
 import cl.colegio.ohiggins.asistencia_anotaciones.repository.AsistenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -30,4 +29,15 @@ public class AsistenciaAnotacionesService {
 
     // --- Lógica para ANOTACIONES ---
 
+    public List<Anotacion> listarAnotaciones() {
+        return anotacionRepo.findAll();
+    }
+
+    public Anotacion guardarAnotacion(Anotacion anotacion) {
+        return anotacionRepo.save(anotacion);
+    }
+    
+    public void eliminarAnotacion(Long id) {
+        anotacionRepo.deleteById(id);
+    }
 }
